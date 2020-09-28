@@ -98,58 +98,58 @@
 // 5.  Напишіть функцію яка отримує години хвилини та секунди і повертає це число 
 // в секундах.
 
-let userHours = +prompt('Enter hours from 0 to 24', 10);
-let userMinutes = +prompt('Enter minutes from 0 to 60', 10);
-let userSeconds = +prompt('Enter seconds from 0 to 60', 10);
-const HOURS_K =  3600;
-const MINUTES_K = 60;
+// let userHours = +prompt('Enter hours from 0 to 24', 10);
+// let userMinutes = +prompt('Enter minutes from 0 to 60', 10);
+// let userSeconds = +prompt('Enter seconds from 0 to 60', 10);
+// const HOURS_K =  3600;
+// const MINUTES_K = 60;
 
-function getSeconds(hours, minutes, seconds) {
-	let count = 0; 
-	if((hours >= 0 && minutes >= 0 && seconds >= 0)&&(hours <= 24 && minutes <= 60 && seconds <= 60)){
-		count = HOURS_K * hours;
-		count += MINUTES_K * minutes;
-		count += seconds;
-		alert(`Date in seconds:  ${count}`);
-		return count;
-	}else{
-		alert('Enter in a correct form');
-	}
-};
+// function getSeconds(hours, minutes, seconds) {
+// 	let count = 0; 
+// 	if((hours >= 0 && minutes >= 0 && seconds >= 0)&&(hours <= 24 && minutes <= 60 && seconds <= 60)){
+// 		count = HOURS_K * hours;
+// 		count += MINUTES_K * minutes;
+// 		count += seconds;
+// 		alert(`Date in seconds:  ${count}`);
+// 		return count;
+// 	}else{
+// 		alert('Enter in a correct form');
+// 	}
+// };
 
-getSeconds(userHours, userMinutes, userSeconds);
+// getSeconds(userHours, userMinutes, userSeconds);
 
 // 6.    Написати функцію , яка приймає секунди, і перетворює їх у години хвилини 
 // та секунди у форматі «гг:хх:сс». якщо кількість годин більша за 23.59.59 - вивести 
 // повідомлення "Більше одного дня". 
 
-// let userSecondsForTransform = +prompt('Enter seconds', 100);
-// const HOURS =  3600;
-// const MINUTES = 60;
+let userSecondsForTransform = +prompt('Enter seconds', 100);
+const HOURS =  3600;
+const MINUTES = 60;
 
 
-// function transformSecondsTonoormal(seconds){
+function transformSecondsTonoormal(seconds){
 
-// 	let hours, intermediateNmber, minutes,newSeconds;
+	let hours, intermediateNmber, minutes,newSeconds;
 	
-// 	hours = (seconds/HOURS);
-// 	hours = hours.toFixed(0);
+	hours = (seconds/HOURS);
+	hours = Math.floor(hours);
 	
-// 	if(hours<24){
+	if(hours<24){
 	
-// 		intermediateNmber = seconds % HOURS; 
-// 		minutes = intermediateNmber / MINUTES;
-// 		minutes = minutes.toFixed(0);
-// 		newSeconds = seconds % HOURS % MINUTES;
+		intermediateNmber = seconds % HOURS; 
+		minutes = intermediateNmber / MINUTES;
+		minutes = Math.floor(minutes);
+		newSeconds = intermediateNmber % MINUTES;
 	
-// 		alert(`New formar of time:  ${hours}:${minutes}:${newSeconds}`);
+		alert(`New formar of time:  ${hours}:${minutes}:${newSeconds}`);
 	
-// 	}else{
-// 		alert('Більше одного дня');
-// 	}
-// }
+	}else{
+		alert('Більше одного дня');
+	}
+}
 
-// transformSecondsTonoormal(userSecondsForTransform);
+transformSecondsTonoormal(userSecondsForTransform);
 
 
 // 7. 4 відмінності ерров фанкшина від звичайної функції.
